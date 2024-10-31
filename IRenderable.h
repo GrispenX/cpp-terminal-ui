@@ -1,6 +1,8 @@
 #ifndef IWIDGET_H
 #define IWIDGET_H
 
+#include <iostream>
+
 class IRenderable
 {
 public:
