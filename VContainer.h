@@ -2,25 +2,18 @@
 #define VCONTAINER_H
 
 #include <vector>
-#include "IRenderable.h"
+#include <memory>
+#include "BaseWidget.h"
 
-class VContainer : IRenderable
+class VContainer : public BaseWidget
 {
 private:
-    unsigned int m_posX;
-    unsigned int m_posY;
-    unsigned int m_sizeX;
-    unsigned int m_sizeY;
-
-    std::vector<IRenderable*> m_children;
+    std::vector<std::shared_ptr<BaseWidget>> m_children;
 
     void ResolveGeometry();
 
 public:
-    void SetPos(unsigned int x, unsigned int y);
-    void Resize(unsigned int x, unsigned int y);
-
-    void AddChild(IRenderable* child);
+    void AddChild(std::shared_ptr<BaseWidget> child);
 
     void Render() override;
 };

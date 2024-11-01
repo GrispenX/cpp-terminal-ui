@@ -2,10 +2,10 @@
 
 void VContainer::ResolveGeometry()
 {
-    unsigned int child_size_x = m_sizeX;
-    unsigned int child_size_y = m_sizeY / m_children.size();
-    unsigned int child_pos_x = m_posX;
-    unsigned int child_pos_y = m_posY;
+    unsigned int child_size_x = GetSize().first;
+    unsigned int child_size_y = GetSize().second / m_children.size();
+    unsigned int child_pos_x = GetPos().first;
+    unsigned int child_pos_y = GetPos().second;
 
     for(auto child : m_children)
     {
@@ -15,19 +15,7 @@ void VContainer::ResolveGeometry()
     }
 }
 
-void VContainer::SetPos(unsigned int x, unsigned int y)
-{
-    m_posX = x;
-    m_posY = y;
-}
-
-void VContainer::Resize(unsigned int x, unsigned int y)
-{
-    m_sizeX = x;
-    m_sizeY = y;
-}
-
-void VContainer::AddChild(IRenderable *child)
+void VContainer::AddChild(std::shared_ptr<BaseWidget> child)
 {
     m_children.push_back(child);
 }
