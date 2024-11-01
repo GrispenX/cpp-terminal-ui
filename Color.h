@@ -22,7 +22,4 @@ public:
     BgColorRGB(uint8_t red, uint8_t green, uint8_t blue);
 };
 
-std::ostream &operator<<(std::ostream &os, const ColorRGB &color);
-std::ostream &operator<<(std::ostream &os, const BgColorRGB &color);
-
 #endif
