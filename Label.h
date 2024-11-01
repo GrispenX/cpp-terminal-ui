@@ -2,7 +2,7 @@
 #define LABEL_H
 
 #include "Color.h"
-#include "IRenderable.h"
+#include "ANSIEscapeSequences.h"
 #include "BaseWidget.h"
 #include <string>
 
@@ -14,6 +14,7 @@ private:
     BgColorRGB m_bgColor;
 
 public:
+    Label();
     Label(std::string text);
 
     void SetText(std::string text);
