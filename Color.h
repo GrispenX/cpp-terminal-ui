@@ -2,6 +2,7 @@
 #define COLOR_H
 
 #include <cstdint>
+#include <iostream>
 
 class ColorRGB
 {
@@ -14,11 +15,14 @@ public:
     uint8_t b;
 };
 
-class BgColorRGB : ColorRGB
+class BgColorRGB : public ColorRGB
 {
 public:
     BgColorRGB();
     BgColorRGB(uint8_t red, uint8_t green, uint8_t blue);
 };
+
+std::ostream &operator<<(std::ostream &os, const ColorRGB &color);
+std::ostream &operator<<(std::ostream &os, const BgColorRGB &color);
 
 #endif
