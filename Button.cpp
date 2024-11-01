@@ -33,5 +33,23 @@ void Button::OnClick(std::function<void()> on_click)
 
 void Button::Render()
 {
+    std::cout << m_textColor << m_bgColor;
+    for(int y = GetPos().second; y < GetPos().second + GetSize().second; y++)
+    {
+        std::cout << Move(GetPos().first, y);
+        for(int x = 0; x < GetSize().first; x++)
+        {
+            std::cout << " ";
+        }
+    }
 
+    if(m_text.length() > GetSize().first)
+    {
+        m_text = m_text.substr(0, GetSize().first);
+    }
+
+    unsigned int text_x = (GetSize().first - m_text.length()) / 2 + GetPos().first;
+    unsigned int text_y = (GetSize().second - 1) / 2 + GetPos().second;
+
+    std::cout << Move(text_x, text_y) << m_text;
 }

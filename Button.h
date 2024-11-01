@@ -3,6 +3,7 @@
 
 #include "Color.h"
 #include "BaseWidget.h"
+#include "ANSIEscapeSequences.h"
 #include <string>
 #include <functional>
 
