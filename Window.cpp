@@ -29,9 +29,9 @@ void Window::RenderFrame()
     std::string title_to_render = m_title;
     if(title_to_render.length() > m_size.first - 2)
     {
-        title_to_render = title_to_render.substr(0, m_size.first - 3) + "…";
+        title_to_render = title_to_render.substr(0, m_size.first - 4) + ".."; //…
     }
-    std::cout << Move(m_pos.first + (m_size.first - title_to_render.length()) / 2, m_pos.second + 1) << title_to_render;
+    std::cout << Move(m_pos.first + 1 + (m_size.first - title_to_render.length() - 2) / 2, m_pos.second + 1) << title_to_render;
 }
 
 Window::Window(std::shared_ptr<BaseWidget> child, std::pair<unsigned int, unsigned int> size, std::pair<unsigned int, unsigned int> pos)
