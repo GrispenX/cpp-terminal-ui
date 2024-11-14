@@ -12,6 +12,16 @@ Size::Size(unsigned int x, unsigned int y)
     m_y = y;
 }
 
+Mouse::Mouse(bool enable)
+{
+    isEnabled = enable;
+}
+
+MouseSGR::MouseSGR(bool enable)
+{
+    isEnabled = enable;
+}
+
 std::ostream &operator<<(std::ostream &os, const Move &move)
 {
     os << "\033[" << move.m_y << ";" << move.m_x << "f";
@@ -33,5 +43,25 @@ std::ostream &operator<<(std::ostream &os, const ColorRGB &color)
 std::ostream &operator<<(std::ostream &os, const BgColorRGB &color)
 {
     os << "\033[48;2;" << int(color.r) << ";" << int(color.g) << ";" << int(color.b) << "m";
+    return os;
+}
+
+std::ostream &operator<<(std::ostream &os, const Mouse &mouse)
+{
+    if(mouse.isEnabled) {
+        os << "\033[?1003h";
+    } else {
+        os << "\033[?1003l";
+    }
+    return os;
+}
+
+std::ostream &operator<<(std::ostream &os, const MouseSGR &mousesgr)
+{
+    if(mousesgr.isEnabled) {
+        os << "\033[?1006h";
+    } else {
+        os << "\033[?1006l";
+    }
     return os;
 }
