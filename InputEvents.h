@@ -1,7 +1,6 @@
 #ifndef INPUTEVENTS_H
 #define INPUTEVENTS_H
 
-#include <optional>
 #include <utility>
 #include <string>
 
@@ -18,12 +17,15 @@ enum MouseButtonState
     RELEASED
 };
 
-struct MouseEvent
+struct MouseMoveEvent
 {
-    std::optional<MouseButtons> button;
-    std::optional<MouseButtonState> button_state;
+    std::pair<unsigned int, unsigned int> pos;
+};
 
-    std::optional<std::pair<unsigned int, unsigned int>> pos;
+struct MouseButtonEvent
+{
+    MouseButtons button;
+    MouseButtonState state;
 };
 
 struct KeyboardEvent
