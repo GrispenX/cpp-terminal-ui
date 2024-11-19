@@ -21,8 +21,9 @@ public:
 
     virtual void Render() = 0;
 
-    virtual void HandleEvent(MouseEvent mouse_event) = 0;
-    virtual void HandleEvent(KeyboardEvent kekyboard_event) = 0;
+    virtual void HandleEvent(MouseMoveEvent event) = 0;
+    virtual void HandleEvent(MouseButtonEvent event) = 0;
+    virtual void HandleEvent(KeyboardEvent event) = 0;
 };
 
 #endif
