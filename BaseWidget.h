@@ -1,6 +1,7 @@
 #ifndef BASEWIDGET_H
 #define BASEWIDGET_H
 
+#include "InputEvents.h"
 #include <utility>
 
 class BaseWidget
@@ -19,6 +20,9 @@ public:
     std::pair<unsigned int, unsigned int> GetSize();
 
     virtual void Render() = 0;
+
+    virtual void HandleEvent(MouseEvent mouse_event) = 0;
+    virtual void HandleEvent(KeyboardEvent kekyboard_event) = 0;
 };
 
 #endif
