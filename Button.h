@@ -14,17 +14,18 @@ private:
     ColorRGB m_textColor;
     BgColorRGB m_bgColor;
 
-    std::function<void()> m_onClick;
-    
+    std::vector<std::pair<MouseButtonEvent, std::function<void()>>> m_onButtonEvents;
+
 public:
     Button();
-    Button(std::string text, std::function<void()> on_click);
 
     void SetText(std::string text);
     void SetTextColor(ColorRGB color);
     void SetBgColor(BgColorRGB color);
 
-    void OnClick(std::function<void()> on_click);
+    void AddEvent(MouseButtons button, MouseButtonState state, std::function<void()> on_event);
+
+    void HandleEvent(MouseButtonEvent event) override;
 
     void Render() override;
 };

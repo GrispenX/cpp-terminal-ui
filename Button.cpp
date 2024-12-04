@@ -5,12 +5,6 @@ Button::Button()
     m_text = "Button";
 }
 
-Button::Button(std::string text, std::function<void()> on_click)
-{
-    m_text = text;
-    m_onClick = on_click;
-}
-
 void Button::SetText(std::string text)
 {
     m_text = text;
@@ -26,9 +20,29 @@ void Button::SetBgColor(BgColorRGB color)
     m_bgColor = color;
 }
 
-void Button::OnClick(std::function<void()> on_click)
+void Button::AddEvent(MouseButtons button, MouseButtonState state, std::function<void()> on_event)
 {
-    m_onClick = on_click;
+    MouseButtonEvent event;
+    event.button = button;
+    event.state = state;
+    m_onButtonEvents.push_back(std::make_pair(event, on_event));
+}
+
+void Button::HandleEvent(MouseButtonEvent event)
+{
+    auto pos = GetPos();
+    auto size = GetSize();
+    if(event.pos.first >= pos.first && event.pos.first <= pos.first + size.first - 1 &&
+       event.pos.second >= pos.second && event.pos.second <= pos.second + size.second - 1)
+    {
+        for(auto on_event : m_onButtonEvents)
+        {
+            if(on_event.first.button == event.button && on_event.first.state == event.state)
+            {
+                on_event.second();
+            }
+        }
+    }
 }
 
 void Button::Render()
