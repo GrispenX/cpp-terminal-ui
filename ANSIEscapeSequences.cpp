@@ -22,6 +22,20 @@ MouseSGR::MouseSGR(bool enable)
     isEnabled = enable;
 }
 
+MouseURXVT::MouseURXVT(bool enable)
+{
+    isEnabled = enable;
+}
+
+AltBuffer::AltBuffer(bool enable)
+{
+    isEnabled = enable;
+}
+
+Clear::Clear() {};
+
+ResetStyle::ResetStyle() {};
+
 std::ostream &operator<<(std::ostream &os, const Move &move)
 {
     os << "\033[" << move.m_y << ";" << move.m_x << "f";
@@ -63,5 +77,37 @@ std::ostream &operator<<(std::ostream &os, const MouseSGR &mousesgr)
     } else {
         os << "\033[?1006l";
     }
+    return os;
+}
+
+std::ostream &operator<<(std::ostream &os, const MouseURXVT &mouseurxvt)
+{
+    if(mouseurxvt.isEnabled) {
+        os << "\033[?1015h";
+    } else {
+        os << "\033[?1015l";
+    }
+    return os;
+}
+
+std::ostream &operator<<(std::ostream &os, const AltBuffer &altbuffer)
+{
+    if(altbuffer.isEnabled) {
+        os << "\033[?1049h";
+    } else {
+        os << "\033[?1049l";
+    }
+    return os;
+}
+
+std::ostream &operator<<(std::ostream &os, const Clear &clear)
+{
+    std::cout << "\033[2J";
+    return os;
+}
+
+std::ostream &operator<<(std::ostream &os, const ResetStyle &reset)
+{
+    std::cout << "\033[0m";
     return os;
 }

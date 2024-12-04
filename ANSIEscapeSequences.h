@@ -38,6 +38,32 @@ struct MouseSGR
     MouseSGR(bool enable);
 };
 
+struct MouseURXVT
+{
+    bool isEnabled;
+
+    MouseURXVT() = delete;
+    MouseURXVT(bool enable);
+};
+
+struct AltBuffer
+{
+    bool isEnabled;
+
+    AltBuffer() = delete;
+    AltBuffer(bool enable);
+};
+
+struct Clear
+{
+    Clear();
+};
+
+struct ResetStyle
+{
+    ResetStyle();
+};
+
 std::ostream &operator<<(std::ostream &os, const Move &move);
 std::ostream &operator<<(std::ostream &os, const Size &size);
 
@@ -46,5 +72,11 @@ std::ostream &operator<<(std::ostream &os, const BgColorRGB &color);
 
 std::ostream &operator<<(std::ostream &os, const Mouse &mouse);
 std::ostream &operator<<(std::ostream &os, const MouseSGR &mousesgr);
+std::ostream &operator<<(std::ostream &os, const MouseURXVT &mouseurxvt);
+
+std::ostream &operator<<(std::ostream &os, const AltBuffer &altbuffer);
+
+std::ostream &operator<<(std::ostream &os, const Clear &clear);
+std::ostream &operator<<(std::ostream &os, const ResetStyle &reset);
 
 #endif
