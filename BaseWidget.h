@@ -3,6 +3,8 @@
 
 #include "InputEvents.h"
 #include <utility>
+#include <vector>
+#include <functional>
 
 class BaseWidget
 {
@@ -21,9 +23,9 @@ public:
 
     virtual void Render() = 0;
 
-    virtual void HandleEvent(MouseMoveEvent event) = 0;
-    virtual void HandleEvent(MouseButtonEvent event) = 0;
-    virtual void HandleEvent(KeyboardEvent event) = 0;
+    virtual void HandleEvent(MouseMoveEvent event) {return;}
+    virtual void HandleEvent(MouseButtonEvent event) {return;}
+    virtual void HandleEvent(KeyboardEvent event) {return;}
 };
 
 #endif
