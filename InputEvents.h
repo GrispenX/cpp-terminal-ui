@@ -26,6 +26,8 @@ struct MouseButtonEvent
 {
     MouseButtons button;
     MouseButtonState state;
+
+    std::pair<unsigned int, unsigned int> pos;
 };
 
 struct KeyboardEvent
