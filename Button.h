@@ -25,7 +25,7 @@ public:
 
     void AddEvent(MouseButtons button, MouseButtonState state, std::function<void()> on_event);
 
-    void HandleEvent(MouseButtonEvent event) override;
+    void HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent> event) override;
 
     void Render() override;
 };

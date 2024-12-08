@@ -28,18 +28,22 @@ void Button::AddEvent(MouseButtons button, MouseButtonState state, std::function
     m_onButtonEvents.push_back(std::make_pair(event, on_event));
 }
 
-void Button::HandleEvent(MouseButtonEvent event)
+void Button::HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent> event)
 {
-    auto pos = GetPos();
-    auto size = GetSize();
-    if(event.pos.first >= pos.first && event.pos.first <= pos.first + size.first - 1 &&
-       event.pos.second >= pos.second && event.pos.second <= pos.second + size.second - 1)
+    if(std::holds_alternative<MouseButtonEvent>(event))
     {
-        for(auto on_event : m_onButtonEvents)
+        auto pos = GetPos();
+        auto size = GetSize();
+        MouseButtonEvent e = std::get<MouseButtonEvent>(event);
+        if(e.pos.first >= pos.first && e.pos.first <= pos.first + size.first - 1 &&
+        e.pos.second >= pos.second && e.pos.second <= pos.second + size.second - 1)
         {
-            if(on_event.first.button == event.button && on_event.first.state == event.state)
+            for(auto on_event : m_onButtonEvents)
             {
-                on_event.second();
+                if(on_event.first.button == e.button && on_event.first.state == e.state)
+                {
+                    on_event.second();
+                }
             }
         }
     }
