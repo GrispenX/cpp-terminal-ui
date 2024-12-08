@@ -5,6 +5,7 @@
 #include <utility>
 #include <vector>
 #include <functional>
+#include <variant>
 
 class BaseWidget
 {
@@ -23,9 +24,7 @@ public:
 
     virtual void Render() = 0;
 
-    virtual void HandleEvent(MouseMoveEvent event) {return;}
-    virtual void HandleEvent(MouseButtonEvent event) {return;}
-    virtual void HandleEvent(KeyboardEvent event) {return;}
+    virtual void HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent> event);
 };
 
 #endif
