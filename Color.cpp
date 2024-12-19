@@ -1,28 +1,28 @@
 #include "Color.h"
 #include <iostream>
 
-ColorRGB::ColorRGB()
+ForegroundRGB::ForegroundRGB()
 {
     r = 255;
     g = 255;
     b = 255;
 }
 
-ColorRGB::ColorRGB(uint8_t red, uint8_t green, uint8_t blue)
+ForegroundRGB::ForegroundRGB(uint8_t red, uint8_t green, uint8_t blue)
 {
     r = red;
     g = green;
     b = blue;
 }
 
-BgColorRGB::BgColorRGB()
+BackgroundRGB::BackgroundRGB()
 {
     r = 0;
     g = 0;
     b = 0;
 }
 
-BgColorRGB::BgColorRGB(uint8_t red, uint8_t green, uint8_t blue)
+BackgroundRGB::BackgroundRGB(uint8_t red, uint8_t green, uint8_t blue)
 {
     r = red;
     g = green;

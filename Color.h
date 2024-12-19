@@ -4,22 +4,22 @@
 #include <cstdint>
 #include <iostream>
 
-class ColorRGB
+class ForegroundRGB
 {
 public:
-    ColorRGB();
-    ColorRGB(uint8_t red, uint8_t green, uint8_t blue);
+    ForegroundRGB();
+    ForegroundRGB(uint8_t red, uint8_t green, uint8_t blue);
     
     uint8_t r;
     uint8_t g;
     uint8_t b;
 };
 
-class BgColorRGB : public ColorRGB
+class BackgroundRGB : public ForegroundRGB
 {
 public:
-    BgColorRGB();
-    BgColorRGB(uint8_t red, uint8_t green, uint8_t blue);
+    BackgroundRGB();
+    BackgroundRGB(uint8_t red, uint8_t green, uint8_t blue);
 };
 
 #endif

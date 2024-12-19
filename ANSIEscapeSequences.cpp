@@ -48,13 +48,13 @@ std::ostream &operator<<(std::ostream &os, const Size &size)
     return os;
 }
 
-std::ostream &operator<<(std::ostream &os, const ColorRGB &color)
+std::ostream &operator<<(std::ostream &os, const ForegroundRGB &color)
 {
     os << "\033[38;2;" << int(color.r) << ";" << int(color.g) << ";" << int(color.b) << "m";
     return os;
 }
 
-std::ostream &operator<<(std::ostream &os, const BgColorRGB &color)
+std::ostream &operator<<(std::ostream &os, const BackgroundRGB &color)
 {
     os << "\033[48;2;" << int(color.r) << ";" << int(color.g) << ";" << int(color.b) << "m";
     return os;
