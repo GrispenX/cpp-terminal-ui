@@ -28,3 +28,11 @@ void HContainer::Render()
         child->Render();
     }
 }
+
+void HContainer::HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent> event)
+{
+    for(auto child : m_children)
+    {
+        child->HandleEvent(event);
+    }
+}

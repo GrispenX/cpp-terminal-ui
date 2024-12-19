@@ -24,7 +24,7 @@ public:
 
     virtual void Render() = 0;
 
-    virtual void HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent> event);
+    virtual void HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent> event) {};
 };
 
 #endif
