@@ -20,6 +20,15 @@ void BaseWidget::Resize(std::pair<unsigned int, unsigned int> size)
     m_size = size;
 }
 
+void BaseWidget::SetForeground(ForegroundRGB color)
+{
+    m_foregroundRGB = color;
+}
+
+void BaseWidget::SetBackground(BackgroundRGB color)
+{
+    m_backgroundRGB = color;
+}
 
 std::pair<unsigned int, unsigned int> BaseWidget::GetPos()
 {
@@ -29,4 +38,14 @@ std::pair<unsigned int, unsigned int> BaseWidget::GetPos()
 std::pair<unsigned int, unsigned int> BaseWidget::GetSize()
 {
     return m_size;
+}
+
+ForegroundRGB BaseWidget::GetForeground()
+{
+    return m_foregroundRGB;
+}
+
+BackgroundRGB BaseWidget::GetBackground()
+{
+    return m_backgroundRGB;
 }

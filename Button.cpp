@@ -10,16 +10,6 @@ void Button::SetText(std::string text)
     m_text = text;
 }
 
-void Button::SetTextColor(ColorRGB color)
-{
-    m_textColor = color;
-}
-
-void Button::SetBgColor(BgColorRGB color)
-{
-    m_bgColor = color;
-}
-
 void Button::AddEvent(MouseButtons button, MouseButtonState state, std::function<void()> on_event)
 {
     MouseButtonEvent event;
@@ -51,7 +41,7 @@ void Button::HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, Keyboard
 
 void Button::Render()
 {
-    std::cout << m_textColor << m_bgColor;
+    std::cout << GetForeground() << GetBackground;
     for(int y = GetPos().second; y < GetPos().second + GetSize().second; y++)
     {
         std::cout << Move(GetPos().first, y);
