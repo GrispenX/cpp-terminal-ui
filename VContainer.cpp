@@ -28,3 +28,11 @@ void VContainer::Render()
         child->Render();
     }
 }
+
+void VContainer::HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent> event)
+{
+    for(auto child : m_children)
+    {
+        child->HandleEvent(event);
+    }
+}
