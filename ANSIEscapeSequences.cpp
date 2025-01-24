@@ -32,6 +32,11 @@ AltBuffer::AltBuffer(bool enable)
     isEnabled = enable;
 }
 
+ShowCursor::ShowCursor(bool enable)
+{
+    isEnabled = enable;
+}
+
 Clear::Clear() {};
 
 ResetStyle::ResetStyle() {};
@@ -96,6 +101,16 @@ std::ostream &operator<<(std::ostream &os, const AltBuffer &altbuffer)
         os << "\033[?1049h";
     } else {
         os << "\033[?1049l";
+    }
+    return os;
+}
+
+std::ostream &operator<<(std::ostream &os, const ShowCursor &showcursor)
+{
+    if(showcursor.isEnabled) {
+        os << "\033[?25h";
+    } else {
+        os << "\033[?25l";
     }
     return os;
 }

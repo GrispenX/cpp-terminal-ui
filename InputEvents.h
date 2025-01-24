@@ -32,7 +32,7 @@ struct MouseButtonEvent
 
 struct KeyboardEvent
 {
-    std::string key;
+    char key;
 };
 
 

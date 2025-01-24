@@ -1,19 +1,17 @@
-#ifndef LABEL_H
-#define LABEL_H
+#ifndef TEXT_H
+#define TEXT_H
 
-#include "Color.h"
 #include "ANSIEscapeSequences.h"
 #include "BaseWidget.h"
-#include <string>
 
-class Label : public BaseWidget
+class Text : public BaseWidget
 {
 private:
     std::string m_text;
 
 public:
-    Label();
-    Label(std::string text);
+    Text();
+    Text(std::string text);
 
     void SetText(std::string text);
 

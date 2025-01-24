@@ -54,6 +54,14 @@ struct AltBuffer
     AltBuffer(bool enable);
 };
 
+struct ShowCursor
+{
+    bool isEnabled;
+
+    ShowCursor() = delete;
+    ShowCursor(bool enable);
+};
+
 struct Clear
 {
     Clear();
@@ -75,6 +83,8 @@ std::ostream &operator<<(std::ostream &os, const MouseSGR &mousesgr);
 std::ostream &operator<<(std::ostream &os, const MouseURXVT &mouseurxvt);
 
 std::ostream &operator<<(std::ostream &os, const AltBuffer &altbuffer);
+
+std::ostream &operator<<(std::ostream &os, const ShowCursor &showcursor);
 
 std::ostream &operator<<(std::ostream &os, const Clear &clear);
 std::ostream &operator<<(std::ostream &os, const ResetStyle &reset);

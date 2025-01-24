@@ -5,6 +5,11 @@ Button::Button()
     m_text = "Button";
 }
 
+Button::Button(std::string text)
+{
+    m_text = text;
+}
+
 void Button::SetText(std::string text)
 {
     m_text = text;
@@ -41,23 +46,37 @@ void Button::HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, Keyboard
 
 void Button::Render()
 {
-    std::cout << GetForeground() << GetBackground;
-    for(int y = GetPos().second; y < GetPos().second + GetSize().second; y++)
+    auto pos = GetPos();
+    auto size = GetSize();
+
+    std::cout << GetBackground() << GetForeground();
+    for(int y = pos.second; y < pos.second + size.second; y++)
     {
-        std::cout << Move(GetPos().first, y);
-        for(int x = 0; x < GetSize().first; x++)
+        std::cout << Move(pos.first, y);
+        for(int x = pos.first; x < pos.first + size.first; x++)
         {
             std::cout << " ";
         }
     }
 
-    if(m_text.length() > GetSize().first)
+    if(m_text.size() > size.first)
     {
-        m_text = m_text.substr(0, GetSize().first);
+        std::cout << Move(pos.first, (size.second - 1) / 2 + pos.second) << m_text.substr(0, size.first - 1) << "…";
+    } else {
+        std::cout << Move((size.first - m_text.size()) / 2 + pos.first, (size.second - 1) / 2 + pos.second) << m_text;
     }
 
-    unsigned int text_x = (GetSize().first - m_text.length()) / 2 + GetPos().first;
-    unsigned int text_y = (GetSize().second - 1) / 2 + GetPos().second;
+    std::cout << ResetStyle();
+}
 
-    std::cout << Move(text_x, text_y) << m_text;
+Button &Button::operator|(const BackgroundRGB &color)
+{
+    SetBackground(color);
+    return *this;
+}
+
+Button &Button::operator|(const ForegroundRGB &color)
+{
+    SetForeground(color);
+    return *this;
 }

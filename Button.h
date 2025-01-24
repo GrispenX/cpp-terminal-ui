@@ -16,6 +16,7 @@ private:
 
 public:
     Button();
+    Button(std::string text);
 
     void SetText(std::string text);
 
@@ -24,6 +25,9 @@ public:
     void HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent> event) override;
 
     void Render() override;
+
+    Button &operator|(const BackgroundRGB &color);
+    Button &operator|(const ForegroundRGB &color);
 };
 
 #endif

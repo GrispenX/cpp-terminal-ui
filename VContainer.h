@@ -9,6 +9,7 @@ class VContainer : public BaseWidget
 {
 private:
     std::vector<std::shared_ptr<BaseWidget>> m_children;
+    std::shared_ptr<BaseWidget> m_activeChild;
 
     void ResolveGeometry();
 

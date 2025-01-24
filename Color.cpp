@@ -17,9 +17,9 @@ ForegroundRGB::ForegroundRGB(uint8_t red, uint8_t green, uint8_t blue)
 
 BackgroundRGB::BackgroundRGB()
 {
-    r = 0;
-    g = 0;
-    b = 0;
+    r = 48;
+    g = 9;
+    b = 36;
 }
 
 BackgroundRGB::BackgroundRGB(uint8_t red, uint8_t green, uint8_t blue)

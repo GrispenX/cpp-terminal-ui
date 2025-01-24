@@ -31,8 +31,25 @@ void VContainer::Render()
 
 void VContainer::HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent> event)
 {
-    for(auto child : m_children)
+    if(std::holds_alternative<MouseButtonEvent>(event))
     {
-        child->HandleEvent(event);
+        auto e = std::get<MouseButtonEvent>(event);
+        for(auto child : m_children)
+        {
+            auto pos = child->GetPos();
+            auto size = child->GetSize();
+
+            if(e.pos.first >= pos.first && e.pos.first <= pos.first + size.first - 1 &&
+               e.pos.second >= pos.second && e.pos.second <= pos.second + size.second - 1)
+            {
+                m_activeChild = child;
+                child->HandleEvent(e);
+            }
+        }
+    }
+    else if(std::holds_alternative<KeyboardEvent>(event))
+    {
+        auto e = std::get<KeyboardEvent>(event);
+        m_activeChild->HandleEvent(e);
     }
 }

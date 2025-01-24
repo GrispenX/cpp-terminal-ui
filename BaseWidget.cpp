@@ -49,3 +49,9 @@ BackgroundRGB BaseWidget::GetBackground()
 {
     return m_backgroundRGB;
 }
+
+// BaseWidget &BaseWidget::operator|(const BackgroundRGB &color)
+// {
+//     SetBackground(color);
+//     return *this;
+// }
