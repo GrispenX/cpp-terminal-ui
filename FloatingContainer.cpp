@@ -1,6 +1,6 @@
 #include "FloatingContainer.h"
 
-void FloatingContainer::AddChild(std::shared_ptr<BaseWidget> child)
+void FloatingContainer::AddChild(BaseWidget* child)
 {
     m_children.push_back(child);
 }

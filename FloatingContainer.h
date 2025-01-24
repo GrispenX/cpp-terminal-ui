@@ -8,10 +8,10 @@
 class FloatingContainer : BaseWidget
 {
 private:
-    std::vector<std::shared_ptr<BaseWidget>> m_children;
+    std::vector<BaseWidget*> m_children;
 
 public:
-    void AddChild(std::shared_ptr<BaseWidget> child);
+    void AddChild(BaseWidget* child);
 
     void Render() override;
 };
