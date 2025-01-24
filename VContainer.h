@@ -8,13 +8,13 @@
 class VContainer : public BaseWidget
 {
 private:
-    std::vector<std::shared_ptr<BaseWidget>> m_children;
-    std::shared_ptr<BaseWidget> m_activeChild;
+    std::vector<BaseWidget*> m_children;
+    BaseWidget* m_activeChild;
 
     void ResolveGeometry();
 
 public:
-    void AddChild(std::shared_ptr<BaseWidget> child);
+    void AddChild(BaseWidget* child);
 
     void Render() override;
 

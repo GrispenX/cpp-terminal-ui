@@ -15,7 +15,7 @@ void VContainer::ResolveGeometry()
     }
 }
 
-void VContainer::AddChild(std::shared_ptr<BaseWidget> child)
+void VContainer::AddChild(BaseWidget* child)
 {
     m_children.push_back(child);
 }
