@@ -5,11 +5,6 @@ HContainer::HContainer()
     
 }
 
-HContainer::HContainer(std::vector<std::shared_ptr<BaseWidget>> children)
-{
-    m_children = children;
-}
-
 void HContainer::ResolveGeometry()
 {
     unsigned int child_size_x = GetSize().first / m_children.size();
@@ -25,7 +20,7 @@ void HContainer::ResolveGeometry()
     }
 }
 
-void HContainer::AddChild(std::shared_ptr<BaseWidget> child)
+void HContainer::AddChild(BaseWidget* child)
 {
     m_children.push_back(child);
 }
