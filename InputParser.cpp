@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "InputParser.h"
 #include "MouseTranslations.h"
 
@@ -24,8 +25,10 @@ void InputParser::Reset()
 //     }
 // }
 
-std::optional<std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent>> InputParser::ParseChar(char c)
+std::optional<std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent>> InputParser::ParseChar()
 {
+    char c;
+    if(read(STDIN_FILENO, &c, sizeof(c)) < 1) return std::nullopt;
     switch(m_state)
     {
     case State::IDLE:

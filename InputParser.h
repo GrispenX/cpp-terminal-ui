@@ -29,7 +29,7 @@ private:
 
 public:
     InputParser();
-    std::optional<std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent>> ParseChar(char c);
+    std::optional<std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent>> ParseChar();
 };
 
 #endif
