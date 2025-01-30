@@ -2,19 +2,38 @@
 #define BORDER_H
 
 #include "BaseWidget.h"
-#include <memory>
+
+struct BorderStyle
+{
+    std::string vertical;
+    std::string horizontal;
+    std::string top_left_corner;
+    std::string top_right_corner;
+    std::string bottom_left_corner;
+    std::string bottom_right_corner;
+};
 
 class Border : public BaseWidget
 {
 private:
-    std::shared_ptr<BaseWidget> m_child;
+    BaseWidget* m_child;
+
+    BorderStyle m_style;
 
 public:
-    void AddChild(std::shared_ptr<BaseWidget> child);
+    Border() = delete;
+    Border(BorderStyle style, BaseWidget* child);
+
+    void SetStyle(BorderStyle style);
 
     void Render() override;
 
     void HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent> event) override;
 };
+
+extern const BorderStyle RectangularBorderStyle;
+extern const BorderStyle RectangularBoldBorderStyle;
+extern const BorderStyle RoundedBorderStyle;
+extern const BorderStyle DoubleBorderStyle;
 
 #endif
