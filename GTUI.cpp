@@ -13,10 +13,10 @@ void GTUI::Loop(BaseWidget* root)
         if(event.has_value())
         {
             root->HandleEvent(event.value());
-            std::cout << Clear();
-            root->Render();
-            std::cout << Move(0, 20) << std::flush; //TODO: change this
         }
+        std::cout << Clear();
+        root->Render();
+        std::cout << Move(0, 20) << std::flush; //TODO: change this
     }
     std::cout << AltBuffer(false) << ResetStyle() << Clear() << ShowCursor(true) << Mouse(false) << MouseURXVT(false) << MouseSGR(false);
     system("stty cooked");
