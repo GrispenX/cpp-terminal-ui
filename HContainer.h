@@ -9,7 +9,6 @@ class HContainer : public BaseWidget
 {
 private:
     std::vector<BaseWidget*> m_children;
-    BaseWidget* m_activeChild;
 
     void ResolveGeometry();
 

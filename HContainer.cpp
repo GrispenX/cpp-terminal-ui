@@ -43,11 +43,9 @@ void HContainer::HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, Keyb
         {
             auto pos = child->GetPos();
             auto size = child->GetSize();
-
-            if(e.pos.first >= pos.first && e.pos.first <= pos.first + size.first - 1 &&
-               e.pos.second >= pos.second && e.pos.second <= pos.second + size.second - 1)
+            if((e.pos.first >= pos.first && e.pos.first <= pos.first + size.first - 1 &&
+               e.pos.second >= pos.second && e.pos.second <= pos.second + size.second - 1) || child->IsActive())
             {
-                m_activeChild = child;
                 child->HandleEvent(e);
             }
         }
@@ -55,6 +53,12 @@ void HContainer::HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, Keyb
     else if(std::holds_alternative<KeyboardEvent>(event))
     {
         auto e = std::get<KeyboardEvent>(event);
-        m_activeChild->HandleEvent(e);
+        for(auto child : m_children)
+        {
+            if(child->IsActive())
+            {
+                child->HandleEvent(e);
+            }
+        }
     }
 }
