@@ -16,8 +16,6 @@ private:
 
     ForegroundRGB m_foregroundRGB;
     BackgroundRGB m_backgroundRGB;
-    ForegroundRGB m_activeForegroundRGB;
-    BackgroundRGB m_activeBackgroundRGB;
 
     bool m_isActive;
 
@@ -28,11 +26,8 @@ public:
     void Resize(std::pair<unsigned int, unsigned int> size);
     void SetForeground(ForegroundRGB color);
     void SetBackground(BackgroundRGB color);
-    void SetActiveForeground(ForegroundRGB color);
-    void SetActiveBackground(BackgroundRGB color);
 
-    void MakeActive();
-    void MakeInactive();
+    void SetActive(bool active);
     bool IsActive();
 
     std::pair<unsigned int, unsigned int> GetPos();

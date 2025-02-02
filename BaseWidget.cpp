@@ -30,24 +30,9 @@ void BaseWidget::SetBackground(BackgroundRGB color)
     m_backgroundRGB = color;
 }
 
-void BaseWidget::SetActiveForeground(ForegroundRGB color)
+void BaseWidget::SetActive(bool active)
 {
-    m_activeForegroundRGB = color;
-}
-
-void BaseWidget::SetActiveBackground(BackgroundRGB color)
-{
-    m_activeBackgroundRGB = color;
-}
-
-void BaseWidget::MakeActive()
-{
-    m_isActive = true;
-}
-
-void BaseWidget::MakeInactive()
-{
-    m_isActive = false;
+    m_isActive = active;
 }
 
 bool BaseWidget::IsActive()
@@ -67,16 +52,10 @@ std::pair<unsigned int, unsigned int> BaseWidget::GetSize()
 
 ForegroundRGB BaseWidget::GetForeground()
 {
-    return m_isActive ? m_activeForegroundRGB : m_foregroundRGB;
+    return m_foregroundRGB;
 }
 
 BackgroundRGB BaseWidget::GetBackground()
 {
-    return m_isActive ? m_activeBackgroundRGB : m_backgroundRGB;
+    return m_backgroundRGB;
 }
-
-// BaseWidget &BaseWidget::operator|(const BackgroundRGB &color)
-// {
-//     SetBackground(color);
-//     return *this;
-// }
