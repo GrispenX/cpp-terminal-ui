@@ -75,8 +75,12 @@ void Button::Render()
     auto pos = GetPos();
     auto size = GetSize();
 
-    std::cout << IsActive() ? GetPressedBackground() : GetBackground();
-    std::cout << IsActive() ? GetPressedForeground() : GetForeground(); 
+    if(IsActive())
+    {
+        std::cout << GetPressedForeground() << GetPressedBackground();
+    } else {
+        std::cout << GetForeground() << GetBackground();
+    }
     for(int y = pos.second; y < pos.second + size.second; y++)
     {
         std::cout << Move(pos.first, y);
