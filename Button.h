@@ -14,11 +14,19 @@ private:
 
     std::vector<std::pair<MouseButtonEvent, std::function<void()>>> m_onButtonEvents;
 
+    BackgroundRGB m_pressedBackgroundRGB;
+    ForegroundRGB m_pressedForegroundRGB;
+
 public:
     Button();
     Button(std::string text);
 
     void SetText(std::string text);
+
+    void SetPressedBackground(BackgroundRGB color);
+    void SetPressedForeground(ForegroundRGB color);
+    BackgroundRGB GetPressedBackground();
+    ForegroundRGB GetPressedForeground();
 
     void AddEvent(MouseButtons button, MouseButtonState state, std::function<void()> on_event);
 
