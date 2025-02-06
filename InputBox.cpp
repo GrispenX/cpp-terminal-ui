@@ -89,6 +89,10 @@ void InputBox::HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, Keyboa
         {
             m_input.pop_back();
         }
+        else if(e.key == 13)
+        {
+            SetActive(false);
+        }
         else
         {
             std::string inputWithCharacter = m_input + e.key;
