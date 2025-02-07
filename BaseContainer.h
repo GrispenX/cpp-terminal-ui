@@ -7,9 +7,10 @@
 class BaseContainer : public BaseWidget
 {
 private:
-    std::vector<BaseWidget*> m_children;
-
     virtual void ResolveGeometry() = 0;
+
+protected:
+    std::vector<BaseWidget*> m_children;
 
 public:
     BaseContainer();
