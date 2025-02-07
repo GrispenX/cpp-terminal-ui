@@ -50,6 +50,10 @@
         "cinttypes": "cpp",
         "optional": "cpp",
         "list": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "ctime": "cpp",
+        "bitset": "cpp",
+        "regex": "cpp",
+        "sstream": "cpp"
     }
 }

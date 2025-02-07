@@ -6,9 +6,8 @@
 #include <string>
 #include <regex>
 
-//"^(-?)(0|([1-9][0-9]*))(\\.[0-9]+)?$"
 const std::regex VALIDATOR_DOUBLE{"^(-?)((0|([1-9][0-9]*))(\\.[0-9]*)?)?$"};
-const std::regex VALIDATOR_INT{"(-?)(0|[1-9][0-9]*)$"};
+const std::regex VALIDATOR_INT{"^(-?)(0|[1-9][0-9]*)?$"};
 
 class InputBox : public BaseWidget
 {
