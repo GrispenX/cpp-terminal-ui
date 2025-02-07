@@ -5,6 +5,7 @@
 
 class HContainer : public BaseContainer
 {
+    using BaseContainer::BaseContainer;
 private:
     void ResolveGeometry() override;
 };
