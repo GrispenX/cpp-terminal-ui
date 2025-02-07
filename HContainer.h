@@ -1,25 +1,12 @@
 #ifndef HCONTAINER_H
 #define HCONTAINER_H
 
-#include <vector>
-#include <memory>
-#include "BaseWidget.h"
+#include "BaseContainer.h"
 
-class HContainer : public BaseWidget
+class HContainer : public BaseContainer
 {
 private:
-    std::vector<BaseWidget*> m_children;
-
-    void ResolveGeometry();
-
-public:
-    HContainer();
-
-    void AddChild(BaseWidget* child);
-
-    void Render() override;
-
-    void HandleEvent(std::variant<MouseMoveEvent, MouseButtonEvent, KeyboardEvent> event) override;
+    void ResolveGeometry() override;
 };
 
 #endif
