@@ -1,0 +1,80 @@
+[
+{
+  "directory": "/home/grispenx/projects/gtui/build",
+  "command": "/usr/bin/clang++-18 -I/home/grispenx/projects/gtui -g -o CMakeFiles/gtui.dir/Color.o -c /home/grispenx/projects/gtui/Color.cpp",
+  "file": "/home/grispenx/projects/gtui/Color.cpp",
+  "output": "CMakeFiles/gtui.dir/Color.o"
+},
+{
+  "directory": "/home/grispenx/projects/gtui/build",
+  "command": "/usr/bin/clang++-18 -I/home/grispenx/projects/gtui -g -o CMakeFiles/gtui.dir/ANSIEscapeSequences.o -c /home/grispenx/projects/gtui/ANSIEscapeSequences.cpp",
+  "file": "/home/grispenx/projects/gtui/ANSIEscapeSequences.cpp",
+  "output": "CMakeFiles/gtui.dir/ANSIEscapeSequences.o"
+},
+{
+  "directory": "/home/grispenx/projects/gtui/build",
+  "command": "/usr/bin/clang++-18 -I/home/grispenx/projects/gtui -g -o CMakeFiles/gtui.dir/BaseWidget.o -c /home/grispenx/projects/gtui/BaseWidget.cpp",
+  "file": "/home/grispenx/projects/gtui/BaseWidget.cpp",
+  "output": "CMakeFiles/gtui.dir/BaseWidget.o"
+},
+{
+  "directory": "/home/grispenx/projects/gtui/build",
+  "command": "/usr/bin/clang++-18 -I/home/grispenx/projects/gtui -g -o CMakeFiles/gtui.dir/Button.o -c /home/grispenx/projects/gtui/Button.cpp",
+  "file": "/home/grispenx/projects/gtui/Button.cpp",
+  "output": "CMakeFiles/gtui.dir/Button.o"
+},
+{
+  "directory": "/home/grispenx/projects/gtui/build",
+  "command": "/usr/bin/clang++-18 -I/home/grispenx/projects/gtui -g -o CMakeFiles/gtui.dir/Text.o -c /home/grispenx/projects/gtui/Text.cpp",
+  "file": "/home/grispenx/projects/gtui/Text.cpp",
+  "output": "CMakeFiles/gtui.dir/Text.o"
+},
+{
+  "directory": "/home/grispenx/projects/gtui/build",
+  "command": "/usr/bin/clang++-18 -I/home/grispenx/projects/gtui -g -o CMakeFiles/gtui.dir/InputBox.o -c /home/grispenx/projects/gtui/InputBox.cpp",
+  "file": "/home/grispenx/projects/gtui/InputBox.cpp",
+  "output": "CMakeFiles/gtui.dir/InputBox.o"
+},
+{
+  "directory": "/home/grispenx/projects/gtui/build",
+  "command": "/usr/bin/clang++-18 -I/home/grispenx/projects/gtui -g -o CMakeFiles/gtui.dir/Spacer.o -c /home/grispenx/projects/gtui/Spacer.cpp",
+  "file": "/home/grispenx/projects/gtui/Spacer.cpp",
+  "output": "CMakeFiles/gtui.dir/Spacer.o"
+},
+{
+  "directory": "/home/grispenx/projects/gtui/build",
+  "command": "/usr/bin/clang++-18 -I/home/grispenx/projects/gtui -g -o CMakeFiles/gtui.dir/Border.o -c /home/grispenx/projects/gtui/Border.cpp",
+  "file": "/home/grispenx/projects/gtui/Border.cpp",
+  "output": "CMakeFiles/gtui.dir/Border.o"
+},
+{
+  "directory": "/home/grispenx/projects/gtui/build",
+  "command": "/usr/bin/clang++-18 -I/home/grispenx/projects/gtui -g -o CMakeFiles/gtui.dir/BaseContainer.o -c /home/grispenx/projects/gtui/BaseContainer.cpp",
+  "file": "/home/grispenx/projects/gtui/BaseContainer.cpp",
+  "output": "CMakeFiles/gtui.dir/BaseContainer.o"
+},
+{
+  "directory": "/home/grispenx/projects/gtui/build",
+  "command": "/usr/bin/clang++-18 -I/home/grispenx/projects/gtui -g -o CMakeFiles/gtui.dir/HContainer.o -c /home/grispenx/projects/gtui/HContainer.cpp",
+  "file": "/home/grispenx/projects/gtui/HContainer.cpp",
+  "output": "CMakeFiles/gtui.dir/HContainer.o"
+},
+{
+  "directory": "/home/grispenx/projects/gtui/build",
+  "command": "/usr/bin/clang++-18 -I/home/grispenx/projects/gtui -g -o CMakeFiles/gtui.dir/VContainer.o -c /home/grispenx/projects/gtui/VContainer.cpp",
+  "file": "/home/grispenx/projects/gtui/VContainer.cpp",
+  "output": "CMakeFiles/gtui.dir/VContainer.o"
+},
+{
+  "directory": "/home/grispenx/projects/gtui/build",
+  "command": "/usr/bin/clang++-18 -I/home/grispenx/projects/gtui -g -o CMakeFiles/gtui.dir/InputParser.o -c /home/grispenx/projects/gtui/InputParser.cpp",
+  "file": "/home/grispenx/projects/gtui/InputParser.cpp",
+  "output": "CMakeFiles/gtui.dir/InputParser.o"
+},
+{
+  "directory": "/home/grispenx/projects/gtui/build",
+  "command": "/usr/bin/clang++-18 -I/home/grispenx/projects/gtui -g -o CMakeFiles/gtui.dir/GTUI.o -c /home/grispenx/projects/gtui/GTUI.cpp",
+  "file": "/home/grispenx/projects/gtui/GTUI.cpp",
+  "output": "CMakeFiles/gtui.dir/GTUI.o"
+}
+]

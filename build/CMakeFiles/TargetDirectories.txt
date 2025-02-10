@@ -1,0 +1,3 @@
+/home/grispenx/projects/gtui/build/CMakeFiles/gtui.dir
+/home/grispenx/projects/gtui/build/CMakeFiles/edit_cache.dir
+/home/grispenx/projects/gtui/build/CMakeFiles/rebuild_cache.dir
