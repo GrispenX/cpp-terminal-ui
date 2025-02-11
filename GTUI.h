@@ -3,6 +3,7 @@
 
 #include "BaseWidget.h"
 #include "InputParser.h"
+#include "Widgets.h"
 
 class GTUI
 {
